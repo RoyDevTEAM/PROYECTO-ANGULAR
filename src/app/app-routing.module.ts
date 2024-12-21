@@ -6,12 +6,15 @@ import { RouterModule, Routes } from '@angular/router'; // Importa el módulo Ro
 import { DashboardComponent } from './dashboard/dashboard.component'; // Importa el componente Dashboard creado en el capitulo 5 de igua forma 
 import { HeroesComponent } from './heroes/heroes.component'; // Importa el componente Heroes
 import { HeroDetailComponent } from './hero-detail/hero-detail.component'; // Importa el componente HeroDetail creado en el capitulo 3
+import { HeroAddComponent } from './hero-add/hero-add.component';
 
 const routes: Routes = [ // Define un arreglo de objetos Routes que especifica las rutas de la aplicación
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // Redirige la ruta raíz ('/') a '/dashboard' como ruta predeterminada capitulo 5
   { path: 'dashboard', component: DashboardComponent }, // Asocia la ruta 'dashboard' con el componente DashboardComponentvv capitulo 5
   { path: 'detail/:id', component: HeroDetailComponent }, // Asocia la ruta 'detail/:id' con el componente HeroDetailComponent, donde ':id' es un parámetro dinámico capitulo 3
   { path: 'heroes', component: HeroesComponent }, // Asocia la ruta 'heroes' con el componente HeroesComponent capitulo 1
+  { path: 'hero-add', component: HeroAddComponent }, // Asocia la ruta 'heroes-add' 
+
 ];
 
 @NgModule({

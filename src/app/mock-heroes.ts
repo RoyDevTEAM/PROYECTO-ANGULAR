@@ -6,7 +6,7 @@ import { Hero } from './hero'; // Importa la clase Hero desde el archivo 'hero.t
 export const HEROES: Hero[] = [
   { id: 11, name: 'Lionel Messi', img: 'assets/img/messi.webp' },
   { id: 12, name: 'Xavi Hernandez', img: 'assets/img/xavi.webp' },
-  { id: 13, name: 'Andres Iniesta', img: 'assets/images/iniesta.jpg' },
+  { id: 13, name: 'Andres Iniesta', img: 'assets/img/iniesta.jpg' },
   { id: 14, name: 'Carles Puyol', img: 'assets/img/puyol.jpg' },
   { id: 15, name: 'Ronaldinho', img: 'assets/img/ronaldinho.jpg' },
   { id: 16, name: 'Gerard Pique', img: 'assets/images/pique.jpg' },

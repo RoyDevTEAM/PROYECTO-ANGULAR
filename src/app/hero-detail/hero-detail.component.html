@@ -1,13 +1,48 @@
-<div *ngIf="hero">
-  <h2>{{ hero.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{ hero.id }}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name" />
+<!-- Contenedor principal para mostrar los detalles del héroe -->
+<div *ngIf="hero" class="p-6 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-lg shadow-lg max-w-md mx-auto mt-10">
+  
+  <!-- Título del héroe con su nombre en mayúsculas -->
+  <h2 class="text-2xl font-bold mb-4 text-center">{{ hero.name | uppercase }} Details</h2>
+  
+  <!-- Fila para mostrar el ID del héroe -->
+  <div class="mb-4 flex justify-between items-center">
+    <span class="font-semibold">ID:</span>
+    <span class="text-lg">{{ hero.id }}</span>
   </div>
-  <!-- Muestra la imagen del héroe -->
-  <div>
-    <img [src]="hero.img" alt="{{ hero.name }}" style="width: 150px; height: auto; margin-top: 10px;" />
+
+  <!-- Campo de entrada para editar el nombre del héroe -->
+  <div class="mb-4">
+    <label for="hero-name" class="block text-sm font-medium">Hero name:</label>
+    <!-- Enlace bidireccional (two-way binding) para el nombre del héroe -->
+    <input
+      id="hero-name"
+      [(ngModel)]="hero.name" 
+      placeholder="Hero name" 
+      class="w-full p-2 mt-1 text-black rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"  
+    />
   </div>
-  <button (click)="goBack()">go back</button>
+
+  <!-- Sección para mostrar la imagen del héroe y una pequeña descripción -->
+  <div class="mb-4 flex flex-col items-center">
+    <!-- Imagen del héroe -->
+    <img
+      [src]="hero.img"  
+      [alt]="hero.name"  
+      class="w-32 h-auto rounded-full shadow-lg transform transition-transform hover:scale-110" 
+    />
+    <!-- Descripción o cita relacionada con el héroe -->
+    <p class="mt-2 text-sm italic">"A true legend in the world of football!"</p>
+  </div>
+
+  <!-- Botón para regresar a la vista anterior -->
+  <div class="flex justify-center">
+    <!-- Acción del botón: ejecuta el método goBack() cuando se hace clic -->
+    <button
+      (click)="goBack()"  
+      class="px-6 py-2 bg-red-500 hover:bg-red-700 text-white font-semibold rounded shadow-md transition duration-300"
+    >
+      Go Back
+    </button>
+    <!-- Vuelve a la página anterior -->
+  </div>
 </div>

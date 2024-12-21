@@ -1,9 +1,27 @@
-<h2>My Heroes</h2>
-
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{ hero.id }}</span> {{ hero.name }}
-    </a>
-  </li>
-</ul>
+<div class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+  <div class="w-full max-w-4xl">
+    <h2 class="text-blue-600 text-3xl font-bold mb-8 text-center">My Heroes</h2>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <li
+        *ngFor="let hero of heroes"
+        class="group bg-white rounded-lg shadow-md hover:shadow-xl transform transition-transform hover:-translate-y-2 p-4 flex items-center space-x-4"
+      >
+        <div
+          class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white font-bold text-lg shadow-lg"
+        >
+          {{ hero.id }}
+        </div>
+        <div class="flex-1">
+          <a
+            [routerLink]="'/detail/' + hero.id"
+            class="text-lg font-semibold text-gray-800 group-hover:text-blue-500 transition-colors"
+          >
+            {{ hero.name }}
+          </a>
+          <p class="text-sm text-gray-500">Click to view details</p>
+        </div>
+        <i class="fas fa-chevron-right text-gray-400 group-hover:text-blue-500 transition-colors"></i>
+      </li>
+    </ul>
+  </div>
+</div>

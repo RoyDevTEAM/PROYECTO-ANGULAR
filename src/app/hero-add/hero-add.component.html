@@ -1,0 +1,47 @@
+<div class="p-6 bg-gradient-to-br from-indigo-500 to-purple-500 text-white rounded-lg shadow-lg max-w-lg mx-auto mt-10">
+    <h2 class="text-2xl font-bold mb-4 text-center">Add a New Hero</h2>
+  
+    <form (submit)="addHero(); $event.preventDefault()" class="space-y-4">
+      <!-- Hero Name Field -->
+      <div>
+        <label for="hero-name" class="block text-sm font-medium mb-1">Hero Name:</label>
+        <input
+          id="hero-name"
+          [(ngModel)]="hero.name"
+          name="heroName"
+          placeholder="Enter hero name"
+          class="w-full p-2 text-black rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          required
+        />
+      </div>
+  
+      <!-- Hero Image Field -->
+      <div>
+        <label for="hero-img" class="block text-sm font-medium mb-1">Hero Image:</label>
+        <input
+          type="file"
+          id="hero-img"
+          (change)="onFileChange($event)"
+          accept="image/*"
+          class="w-full p-2 bg-white text-black rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          required
+        />
+      </div>
+  
+      <!-- Image Preview -->
+      <div *ngIf="hero.img.trim()" class="flex justify-center mt-4">
+        <img [src]="hero.img" [alt]="hero.name" class="w-32 h-auto rounded shadow-lg" />
+      </div>
+  
+      <!-- Submit Button -->
+      <div class="flex justify-center">
+        <button
+          type="submit"
+          class="px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded shadow-md transition duration-300"
+        >
+          Add Hero
+        </button>
+      </div>
+    </form>
+  </div>
+  
