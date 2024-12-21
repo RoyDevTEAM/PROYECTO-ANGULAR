@@ -3,7 +3,11 @@
   <div><span>id: </span>{{ hero.id }}</div>
   <div>
     <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/>
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name" />
+  </div>
+  <!-- Muestra la imagen del héroe -->
+  <div>
+    <img [src]="hero.img" alt="{{ hero.name }}" style="width: 150px; height: auto; margin-top: 10px;" />
   </div>
   <button (click)="goBack()">go back</button>
 </div>
