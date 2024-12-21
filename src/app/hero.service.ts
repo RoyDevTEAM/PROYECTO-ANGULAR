@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Hero } from './hero';
 import { MessageService } from './message.service';
+import { HEROES } from './mock-heroes';
 
 @Injectable({
   providedIn: 'root',
@@ -10,12 +11,12 @@ export class HeroService {
   constructor(private messageService: MessageService) {}
 
   getHeroes(): Observable<Hero[]> {
-    const storedHeroes = localStorage.getItem('heroes');
-    const heroes = storedHeroes ? JSON.parse(storedHeroes) : [];
-    this.messageService.add('HeroService: fetched heroes');
-    return of(heroes);
+    const heroes = of(HEROES); // Crea un Observable de héroes a partir del arreglo HEROES
+    this.messageService.add('HeroService: fetched heroes'); // Agrega un mensaje al servicio MessageService
+    return heroes; // Devuelve el Observable de héroes
   }
 
+  
   getHero(id: number): Observable<Hero | undefined> {
     const heroes = this.getHeroesSync();
     const hero = heroes.find((hero) => hero.id === id);
